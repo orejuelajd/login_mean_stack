@@ -278,3 +278,4 @@ module.exports.verificacionLogin = verificacionLogin;
 module.exports.crear = crear;
 module.exports.update = update;
 module.exports.read = read;
+module.exports.readX = readX;
