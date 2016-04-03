@@ -5,12 +5,14 @@ module.exports.createObjectWithName = function(coleccion, v1, v2, v3) {
 
 	if ( coleccion == 'Usuario') {
 		obj = new Usuario({usuario:v1, password:v2});
+		console.log("Usuario Registrado");
 	}
 	else if ( coleccion == 'Registro') {
     var d = new Date();
     var horafechastring = d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear() + "--" + d.getHours() + "-" + d.getMinutes() + "-" + d.getSeconds();
 		obj = new Registro({tipo:v1, usuario:v2, descripcion:v3, horafecha:horafechastring});
 	}
+
 	return obj;
 }
 

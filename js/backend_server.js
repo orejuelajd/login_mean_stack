@@ -14,5 +14,5 @@ var server = app.listen(port);
 app.get('/', function(req, res) {
   res.send('hello world');
 });
-app.get("/crear/:collection/:v1/:v2/:v3", service.create);
+app.get("/crear/:collection/:v1/:v2/:v3", service.crear);
 app.get("/login/:collection/:usuario/:password/:v3", service.verificacionLogin);
