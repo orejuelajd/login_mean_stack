@@ -37,6 +37,10 @@ app.controller('LoginController', function($scope, $http, $resource) {
 			 				//$scope.resultadosHTML = respuesta.data.value;
 							if(respuesta.data.value.length > 0){
 								console.log("Login exitoso");
+								//console.log($scope.usuario.usuario);
+								//Window.location("perfil.html?usuario="+$scope.usuario.usuario);
+								//$location.absUrl() == 'http://example.com/base/index.html#!/new?x=y';
+								window.location.href = "http://localhost:4000/vistas/perfil.html?usuario="+$scope.usuario.usuario;
 							}else{
 								console.log("Login erroneo");
 							}

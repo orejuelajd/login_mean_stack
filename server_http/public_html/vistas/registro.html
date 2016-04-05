@@ -1,10 +1,13 @@
-<!DOCTYPE>
-<html>
+<!DOCTYPE html>
+<html ng-app="appRegistro">
   <head>
     <meta charset="utf-8">
     <title> Reto 01</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.3/angular-resource.js"></script>
+    <script src= "../controladores/RegistroController.js" type="text/javascript"></script>
   </head>
-  <body>
+  <body ng-controller="RegistroController">
     <h1>Registro</h1>
     <div>
       <a href="./login.html">Login</a>
@@ -14,12 +17,14 @@
       <br>
       <form>
         Usuario:<br>
-        <input type="text"><br>
+        <input type="text" ng-model="usuario.usuario"><br>
         Password:<br>
-        <input type="text"><br>
+        <input type="text" ng-model="usuario.password1"><br>
         Confirmar password:<br>
-        <input type="text">
+        <input type="text" ng-model="usuario.password2">
       </form>
+      <br>
+      <button ng-Click="registrarse()">Registrar</button>
     </div>
   </body>
 </html>
