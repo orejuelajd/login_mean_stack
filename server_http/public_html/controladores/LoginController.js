@@ -1,8 +1,13 @@
 //Modulo Angular
-var app = angular.module('myapp', ['ngResource']);
+var app = angular.module('myapp', ['ngResource', 'LocalStorageModule']);
+
+app.config(function (localStorageServiceProvider) {
+  localStorageServiceProvider
+    .setPrefix('login_mean_stack');
+});
 
 //Controlador
-app.controller('LoginController', function($scope, $http, $resource) {
+app.controller('LoginController', function($scope, $http, $resource, localStorageService) {
 	// $scope.nombreHTML = '';
 	// $scope.nombreResource = '';
 
@@ -37,15 +42,16 @@ app.controller('LoginController', function($scope, $http, $resource) {
 			 				//$scope.resultadosHTML = respuesta.data.value;
 							if(respuesta.data.value.length > 0){
 								console.log("Login exitoso");
+								localStorageService.set("username", $scope.usuario.usuario);
 								//console.log($scope.usuario.usuario);
 								//Window.location("perfil.html?usuario="+$scope.usuario.usuario);
 								//$location.absUrl() == 'http://example.com/base/index.html#!/new?x=y';
 								window.location.href = "http://localhost:4000/vistas/perfil.html?usuario="+$scope.usuario.usuario;
 							}else{
-								console.log("Login erroneo");
+								window.alert("Login erroneo");
 							}
 			 			}, function error(err) {
-			 				console.log('error');
+			 				window.alert('error');
 			 			});
   }
 

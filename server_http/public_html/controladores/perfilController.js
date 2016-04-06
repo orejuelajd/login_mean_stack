@@ -1,8 +1,13 @@
 //Modulo Angular
-var app = angular.module('appPerfil', ['ngResource']);
+var app = angular.module('appPerfil', ['ngResource', 'LocalStorageModule']);
+
+app.config(function (localStorageServiceProvider) {
+  localStorageServiceProvider
+    .setPrefix('login_mean_stack');
+});
 
 //Controlador
-app.controller('perfilController', function($scope, $http, $resource) {
+app.controller('perfilController', function($scope, $http, $resource, localStorageService) {
 	$scope.nombreHTML = '';
 	$scope.nombreResource = '';
 	$scope.name = "";
@@ -79,7 +84,7 @@ app.controller('perfilController', function($scope, $http, $resource) {
   $scope.logout = function() {
 		$http.defaults.useXDomain = true;
 		$scope.name = "undefined";
-    var url = "http://localhost:3000/crear/Registro/logout/" + $scope.name + "/cierreSesionOK";
+    var url = "http://localhost:3000/crear/Registro/logout/" + localStorageService.get("username") + "/cierreSesionOK";
 		$http({
         method: 'GET',
         url: url
