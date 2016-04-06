@@ -1,7 +1,7 @@
 Login básico en Stack MEAN
 ======================================
 
-Proyecto realizado por Juan David Orejuela Bolaños y que bajo la estructura de MEAN (MongoDB, ExpressJs, AngularJs y NodeJs) plantea una aplicación que contiene un sistema básico de login y registro de usuarios.
+Proyecto realizado por Juan David Orejuela Bolaños (basado en un proyecto dado por el profesor Olmedo Arcila en la asignatura Desarrollo de Aplicaciones Web Interactivas) y que bajo la estructura de MEAN (MongoDB, ExpressJs, AngularJs y NodeJs) plantea una aplicación que contiene un sistema básico de login y registro de usuarios.
 
 El proyecto se divide en dos partes:
 
