@@ -24,6 +24,7 @@ app.get('/', function(req, res) {
 app.get("/crear/:collection/:v1/:v2/:v3", service.crear);
 app.get("/login/:collection/:usuario/:password/:v3", service.verificacionLogin);
 app.get("/buscar/:collection/:param/:value", service.readX);
+app.get("/buscarUsuarios/:collection", service.read);
 
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "*");
